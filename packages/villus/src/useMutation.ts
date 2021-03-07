@@ -5,7 +5,7 @@ import { VILLUS_CLIENT } from './symbols';
 import { Operation } from '../../shared/src';
 
 interface MutationExecutionOptions {
-  context: MaybeReactive<QueryExecutionContext>;
+  context: MaybeReactive<Partial<QueryExecutionContext>>;
 }
 
 export function useMutation<TData = any, TVars = QueryVariables>(

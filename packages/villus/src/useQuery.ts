@@ -8,7 +8,7 @@ import { Operation } from '../../shared/src';
 interface QueryCompositeOptions<TData, TVars> {
   query: MaybeReactive<Operation<TData, TVars>['query']>;
   variables?: MaybeReactive<TVars>;
-  context?: MaybeReactive<QueryExecutionContext>;
+  context?: MaybeReactive<Partial<QueryExecutionContext>>;
   cachePolicy?: CachePolicy;
   fetchOnMount?: boolean;
 }
