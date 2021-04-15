@@ -134,8 +134,8 @@ export class Client {
     return this.execute<TData, TVars>(operation, 'mutation', queryContext);
   }
 
-  public async executeSubscription<TData = any, TVars = QueryVariables>(operation: Operation<TData, TVars>) {
-    const result = await this.execute<TData, TVars>(operation, 'subscription');
+  public async executeSubscription<TData = any, TVars = QueryVariables>(operation: Operation<TData, TVars>, queryContext?: QueryExecutionContext) {
+    const result = await this.execute<TData, TVars>(operation, 'subscription', queryContext);
 
     return (result as unknown) as ObservableLike<StandardOperationResult<TData>>;
   }
